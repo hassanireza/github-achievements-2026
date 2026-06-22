@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Achievements 2026 — The Complete Unlock Guide</title>
+<meta name="description" content="The most complete, up-to-date guide to every GitHub profile achievement in 2026. Real criteria, tier requirements, and ethical strategies for Pull Shark, Pair Extraordinaire, Galaxy Brain, Quickdraw, Starstruck, YOLO and more.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root{
+  /* surfaces */
+  --bg-void:        #060809;
+  --bg-canvas:      #0d1117;
+  --bg-surface:     #131820;
+  --bg-surface-2:   #1c2128;
+  --bg-raised:      #21262d;
+  --hairline:       #2a3038;
+  --hairline-soft:  #1d2228;
+
+  /* text */
+  --text-primary:   #e6edf3;
+  --text-secondary: #8b949e;
+  --text-tertiary:  #5f6772;
+
+  /* signature accents — drawn from real git/GitHub semantics */
+  --green:          #3fb950;   /* merged / unlocked */
+  --green-dim:      #2ea04330;
+  --violet:         #a371f7;   /* "done" / legendary */
+  --violet-dim:     #a371f730;
+  --amber:          #d29922;   /* caution / hacks */
+  --amber-dim:      #d2992230;
+  --red:            #f85149;   /* danger / ToS risk */
+  --red-dim:        #f8514930;
+  --blue:           #4493f8;   /* info / links */
+
+  /* tier metals — match real GitHub tier labels */
+  --tier-bronze:    #f9bfa7;
+  --tier-silver:    #e1e4e4;
+  --tier-gold:      #fae57e;
+
+  /* type */
+  --font-mono:  'JetBrains Mono', 'SF Mono', monospace;
+  --font-sans:  'Inter', -apple-system, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  background:var(--bg-canvas);
+  color:var(--text-primary);
+  font-family:var(--font-sans);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+::selection{ background:var(--violet-dim); color:var(--text-primary); }
+
+::-webkit-scrollbar{ width:10px; }
+::-webkit-scrollbar-track{ background:var(--bg-canvas); }
+::-webkit-scrollbar-thumb{ background:var(--bg-raised); border-radius:5px; }
+::-webkit-scrollbar-thumb:hover{ background:var(--hairline); }
+
+a{ color:inherit; text-decoration:none; }
+
+.mono{ font-family:var(--font-mono); }
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration:0.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.001ms !important;
+    scroll-behavior:auto !important;
+  }
+}
+
+/* ============================================================
+   LAYOUT SHELL
+   ============================================================ */
+.container{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 32px;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(13,17,23,0.72);
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid var(--hairline-soft);
+  transition:border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.nav-inner{
+  max-width:1180px; margin:0 auto; padding:0 32px;
+  height:64px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:24px;
+}
+.nav-brand{
+  display:flex; align-items:center; gap:10px;
+  font-family:var(--font-mono); font-weight:700; font-size:15px;
+  letter-spacing:-0.02em;
+  white-space:nowrap;
+}
+.nav-brand .dot{
+  width:8px; height:8px; border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 0 0 var(--green-dim);
+  animation:pulse-dot 2.4s ease-out infinite;
+  flex-shrink:0;
+}
+@keyframes pulse-dot{
+  0%{ box-shadow:0 0 0 0 rgba(63,185,80,0.5); }
+  70%{ box-shadow:0 0 0 8px rgba(63,185,80,0); }
+  100%{ box-shadow:0 0 0 0 rgba(63,185,80,0); }
+}
+.nav-links{
+  display:flex; align-items:center; gap:28px;
+  font-size:13.5px; font-weight:500; color:var(--text-secondary);
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.nav-links::-webkit-scrollbar{ display:none; }
+.nav-links a{ white-space:nowrap; transition:color 0.2s; position:relative; padding:4px 0; }
+.nav-links a:hover{ color:var(--text-primary); }
+.nav-links a.active{ color:var(--green); }
+.nav-cta{
+  display:flex; align-items:center; gap:8px;
+  background:var(--bg-raised);
+  border:1px solid var(--hairline);
+  color:var(--text-primary);
+  font-family:var(--font-mono); font-size:12.5px; font-weight:600;
+  padding:7px 14px; border-radius:var(--radius-sm);
+  white-space:nowrap;
+  transition:all 0.2s var(--ease);
+}
+.nav-cta:hover{ border-color:var(--green); background:var(--green-dim); transform:translateY(-1px); }
+.nav-progress{
+  position:absolute; bottom:-1px; left:0; height:2px;
+  background:linear-gradient(90deg, var(--green), var(--violet));
+  width:0%;
+  transition:width 0.1s linear;
+}
+@media (max-width:860px){
+  .nav-links{ display:none; }
+}
+
+/* ============================================================
+   HERO — signature element: live animated commit / merge graph
+   ============================================================ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:140px 0 100px;
+  overflow:hidden;
+}
+.hero-bg-grid{
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(var(--hairline-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse 60% 50% at 50% 30%, black 0%, transparent 100%);
+  opacity:0.5;
+}
+.hero-glow{
+  position:absolute; top:-10%; left:50%; transform:translateX(-50%);
+  width:900px; height:600px;
+  background:radial-gradient(ellipse at center, rgba(163,113,247,0.16), transparent 65%);
+  pointer-events:none;
+}
+.hero-inner{
+  position:relative; z-index:2;
+  display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:center;
+}
+@media (max-width:980px){
+  .hero-inner{ grid-template-columns:1fr; }
+}
+
+.hero-eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--font-mono); font-size:12.5px; font-weight:600;
+  color:var(--green);
+  background:var(--green-dim);
+  border:1px solid rgba(63,185,80,0.3);
+  padding:6px 12px; border-radius:20px;
+  margin-bottom:28px;
+  letter-spacing:0.02em;
+}
+.hero-eyebrow .blink{ animation:blink 1.4s steps(2) infinite; }
+@keyframes blink{ 50%{ opacity:0.2; } }
+
+.hero h1{
+  font-family:var(--font-sans);
+  font-weight:800;
+  font-size:clamp(40px, 5.6vw, 68px);
+  line-height:1.03;
+  letter-spacing:-0.025em;
+  margin-bottom:24px;
+}
+.hero h1 .accent{
+  background:linear-gradient(95deg, var(--green) 10%, var(--violet) 90%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero-sub{
+  font-size:18px; color:var(--text-secondary); max-width:520px;
+  margin-bottom:36px;
+  line-height:1.65;
+}
+.hero-sub strong{ color:var(--text-primary); font-weight:600; }
+
+.hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:48px; }
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--font-sans); font-weight:700; font-size:14.5px;
+  padding:13px 22px; border-radius:var(--radius-md);
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s;
+}
+.btn-primary{
+  background:linear-gradient(180deg, #46c35a, #2ea043);
+  color:#04150a;
+  box-shadow:0 1px 0 rgba(255,255,255,0.2) inset, 0 8px 24px -8px rgba(46,160,67,0.55);
+}
+.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 1px 0 rgba(255,255,255,0.25) inset, 0 14px 30px -10px rgba(46,160,67,0.7); }
+.btn-ghost{
+  background:var(--bg-surface);
+  border-color:var(--hairline);
+  color:var(--text-primary);
+}
+.btn-ghost:hover{ border-color:var(--text-tertiary); transform:translateY(-2px); background:var(--bg-surface-2); }
+.btn svg{ width:16px; height:16px; }
+
+.hero-stats{ display:flex; gap:32px; flex-wrap:wrap; }
+.hero-stat-num{
+  font-family:var(--font-mono); font-weight:700; font-size:24px;
+  color:var(--text-primary);
+  display:flex; align-items:baseline; gap:2px;
+}
+.hero-stat-label{ font-size:12.5px; color:var(--text-tertiary); margin-top:2px; }
+
+/* commit graph visual */
+.graph-card{
+  background:linear-gradient(180deg, var(--bg-surface), var(--bg-canvas));
+  border:1px solid var(--hairline);
+  border-radius:var(--radius-lg);
+  padding:24px 20px 20px;
+  box-shadow:0 30px 60px -30px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.02) inset;
+  position:relative;
+}
+.graph-card-header{
+  display:flex; align-items:center; gap:8px;
+  margin-bottom:18px; padding-bottom:14px;
+  border-bottom:1px solid var(--hairline-soft);
+}
+.graph-card-header .traffic{ display:flex; gap:6px; }
+.traffic span{ width:10px; height:10px; border-radius:50%; }
+.traffic span:nth-child(1){ background:#f85149; }
+.traffic span:nth-child(2){ background:#d29922; }
+.traffic span:nth-child(3){ background:#3fb950; }
+.graph-card-title{ font-family:var(--font-mono); font-size:12px; color:var(--text-tertiary); margin-left:6px; }
+.graph-svg{ width:100%; height:auto; display:block; }
+
+@media (max-width:980px){
+  .hero{ min-height:auto; padding:120px 0 70px; }
+}
+
+/* ============================================================
+   MARQUEE TICKER
+   ============================================================ */
+.ticker{
+  border-top:1px solid var(--hairline-soft);
+  border-bottom:1px solid var(--hairline-soft);
+  background:var(--bg-surface);
+  overflow:hidden;
+  padding:14px 0;
+  white-space:nowrap;
+}
+.ticker-track{
+  display:inline-flex;
+  animation:ticker-scroll 38s linear infinite;
+}
+.ticker-track span{
+  font-family:var(--font-mono); font-size:13px; color:var(--text-tertiary);
+  padding:0 28px; display:inline-flex; align-items:center; gap:10px;
+}
+.ticker-track span b{ color:var(--text-secondary); font-weight:600; }
+@keyframes ticker-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+/* ============================================================
+   SECTION SCAFFOLDING
+   ============================================================ */
+section{ padding:120px 0; position:relative; }
+.section-head{ max-width:680px; margin-bottom:64px; }
+.eyebrow{
+  font-family:var(--font-mono); font-size:12.5px; font-weight:600;
+  color:var(--violet); text-transform:uppercase; letter-spacing:0.08em;
+  margin-bottom:14px; display:block;
+}
+.section-head h2{
+  font-size:clamp(28px, 3.4vw, 42px); font-weight:800; letter-spacing:-0.02em;
+  line-height:1.1; margin-bottom:16px;
+}
+.section-head p{ font-size:16.5px; color:var(--text-secondary); line-height:1.7; }
+
+/* ============================================================
+   ACHIEVEMENT GRID
+   ============================================================ */
+.filter-bar{
+  display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px;
+}
+.filter-chip{
+  font-family:var(--font-mono); font-size:12.5px; font-weight:600;
+  padding:8px 14px; border-radius:20px;
+  border:1px solid var(--hairline);
+  background:var(--bg-surface);
+  color:var(--text-secondary);
+  cursor:pointer;
+  transition:all 0.2s var(--ease);
+}
+.filter-chip:hover{ border-color:var(--text-tertiary); color:var(--text-primary); }
+.filter-chip.active{
+  background:var(--green-dim); border-color:rgba(63,185,80,0.4); color:var(--green);
+}
+
+.badge-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+  gap:18px;
+}
+
+.badge-card{
+  background:var(--bg-surface);
+  border:1px solid var(--hairline);
+  border-radius:var(--radius-lg);
+  padding:22px;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  transition:transform 0.35s var(--ease), border-color 0.35s var(--ease), background 0.35s var(--ease);
+}
+.badge-card::before{
+  content:'';
+  position:absolute; inset:0;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%), rgba(163,113,247,0.10), transparent 60%);
+  opacity:0; transition:opacity 0.4s;
+  pointer-events:none;
+}
+.badge-card:hover::before{ opacity:1; }
+.badge-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(163,113,247,0.35);
+  background:var(--bg-surface-2);
+}
+.badge-card.flipped .badge-card-inner{ transform:rotateY(180deg); }
+
+.badge-top{ display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:16px; }
+.badge-icon-wrap{
+  width:56px; height:56px; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:26px;
+  background:var(--bg-raised);
+  border:1px solid var(--hairline);
+  position:relative;
+  flex-shrink:0;
+}
+.badge-icon-wrap .ring{
+  position:absolute; inset:-1px; border-radius:14px;
+  border:1px solid transparent;
+}
+.badge-card[data-status="easy"] .badge-icon-wrap{ background:var(--green-dim); border-color:rgba(63,185,80,0.35); }
+.badge-card[data-status="medium"] .badge-icon-wrap{ background:var(--amber-dim); border-color:rgba(210,153,34,0.35); }
+.badge-card[data-status="rare"] .badge-icon-wrap{ background:var(--violet-dim); border-color:rgba(163,113,247,0.4); }
+.badge-card[data-status="unobtainable"] .badge-icon-wrap{ background:rgba(248,81,73,0.08); border-color:rgba(248,81,73,0.3); opacity:0.7; }
+
+.badge-difficulty{
+  font-family:var(--font-mono); font-size:10.5px; font-weight:700;
+  padding:4px 9px; border-radius:6px; text-transform:uppercase; letter-spacing:0.04em;
+  white-space:nowrap;
+}
+.badge-card[data-status="easy"] .badge-difficulty{ background:var(--green-dim); color:var(--green); }
+.badge-card[data-status="medium"] .badge-difficulty{ background:var(--amber-dim); color:var(--amber); }
+.badge-card[data-status="rare"] .badge-difficulty{ background:var(--violet-dim); color:var(--violet); }
+.badge-card[data-status="unobtainable"] .badge-difficulty{ background:rgba(248,81,73,0.1); color:var(--red); }
+
+.badge-name{ font-size:18px; font-weight:700; margin-bottom:6px; letter-spacing:-0.01em; }
+.badge-tagline{ font-size:13.5px; color:var(--text-tertiary); margin-bottom:16px; min-height:36px; }
+
+.badge-criteria{
+  font-family:var(--font-mono); font-size:12.5px;
+  background:var(--bg-canvas);
+  border:1px solid var(--hairline-soft);
+  border-radius:var(--radius-sm);
+  padding:10px 12px;
+  color:var(--text-secondary);
+  margin-bottom:14px;
+  line-height:1.6;
+}
+.badge-criteria .k{ color:var(--green); }
+
+.badge-tiers{ display:flex; gap:6px; margin-bottom:6px; }
+.tier-pip{
+  flex:1; height:5px; border-radius:3px; background:var(--hairline);
+}
+.tier-pip.b{ background:var(--tier-bronze); }
+.tier-pip.s{ background:var(--tier-silver); }
+.tier-pip.g{ background:var(--tier-gold); }
+
+.badge-footer{ display:flex; align-items:center; justify-content:space-between; margin-top:14px; }
+.badge-time{ font-size:12px; color:var(--text-tertiary); display:flex; align-items:center; gap:5px; }
+.badge-expand{ font-family:var(--font-mono); font-size:11.5px; color:var(--violet); font-weight:600; }
+
+.badge-detail{
+  display:none;
+  margin-top:16px; padding-top:16px;
+  border-top:1px solid var(--hairline-soft);
+  font-size:13.5px; color:var(--text-secondary); line-height:1.7;
+}
+.badge-detail.open{ display:block; animation:detail-in 0.3s var(--ease); }
+@keyframes detail-in{ from{ opacity:0; transform:translateY(-6px); } to{ opacity:1; transform:translateY(0); } }
+.badge-detail strong{ color:var(--text-primary); }
+.badge-detail .tip{
+  margin-top:10px; padding:10px 12px;
+  background:var(--green-dim); border-left:2px solid var(--green);
+  border-radius:6px; font-size:13px; color:#a8e6b3;
+}
+.badge-detail .warn{
+  margin-top:10px; padding:10px 12px;
+  background:var(--amber-dim); border-left:2px solid var(--amber);
+  border-radius:6px; font-size:13px; color:#f0d088;
+}
+
+/* ============================================================
+   TIERS SECTION
+   ============================================================ */
+.tier-section{ background:var(--bg-surface); border-top:1px solid var(--hairline-soft); border-bottom:1px solid var(--hairline-soft); }
+.tier-table{ display:flex; flex-direction:column; gap:14px; }
+.tier-row{
+  display:grid; grid-template-columns:200px 1fr 90px 90px 90px;
+  align-items:center; gap:16px;
+  background:var(--bg-canvas);
+  border:1px solid var(--hairline-soft);
+  border-radius:var(--radius-md);
+  padding:16px 20px;
+}
+.tier-row-name{ display:flex; align-items:center; gap:10px; font-weight:700; font-size:14.5px; }
+.tier-row-name .ic{ font-size:20px; }
+.tier-bars{ display:flex; align-items:center; gap:3px; height:24px; }
+.tier-bar-seg{ flex:1; height:100%; border-radius:4px; position:relative; display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:10px; font-weight:700; color:#0a0d11; opacity:0.92; }
+.tier-bar-seg.base{ background:#30363d; color:var(--text-tertiary); }
+.tier-bar-seg.bronze{ background:var(--tier-bronze); }
+.tier-bar-seg.silver{ background:var(--tier-silver); }
+.tier-bar-seg.gold{ background:var(--tier-gold); }
+.tier-col{ font-family:var(--font-mono); font-size:13px; color:var(--text-secondary); text-align:center; }
+.tier-head-row{
+  display:grid; grid-template-columns:200px 1fr 90px 90px 90px;
+  gap:16px; padding:0 20px 12px;
+  font-family:var(--font-mono); font-size:11px; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:0.05em;
+}
+.tier-head-row span:not(:first-child){ text-align:center; }
+@media (max-width:860px){
+  .tier-row, .tier-head-row{ grid-template-columns:140px 1fr; }
+  .tier-row .tier-col:nth-child(n+4), .tier-head-row span:nth-child(n+4){ display:none; }
+}
+
+/* ============================================================
+   FAST TRACK / STRATEGY TIMELINE
+   ============================================================ */
+.timeline{ position:relative; padding-left:36px; }
+.timeline::before{
+  content:''; position:absolute; left:11px; top:6px; bottom:6px; width:2px;
+  background:linear-gradient(180deg, var(--green), var(--violet), var(--hairline));
+}
+.t-step{ position:relative; padding-bottom:42px; }
+.t-step:last-child{ padding-bottom:0; }
+.t-step::before{
+  content:''; position:absolute; left:-36px; top:2px;
+  width:24px; height:24px; border-radius:50%;
+  background:var(--bg-canvas); border:2px solid var(--green);
+  box-shadow:0 0 0 4px var(--bg-canvas);
+}
+.t-step-day{ font-family:var(--font-mono); font-size:12px; color:var(--green); font-weight:700; margin-bottom:6px; }
+.t-step h4{ font-size:18px; font-weight:700; margin-bottom:8px; }
+.t-step p{ color:var(--text-secondary); font-size:14.5px; line-height:1.7; max-width:640px; }
+.t-step-badges{ display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+.t-pill{
+  font-family:var(--font-mono); font-size:11.5px; font-weight:600;
+  padding:5px 10px; border-radius:14px;
+  background:var(--bg-raised); border:1px solid var(--hairline); color:var(--text-secondary);
+}
+
+/* ============================================================
+   PRO TACTICS / HACKS
+   ============================================================ */
+.tactics-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; }
+@media (max-width:860px){ .tactics-grid{ grid-template-columns:1fr; } }
+.tactic-card{
+  background:var(--bg-surface); border:1px solid var(--hairline);
+  border-radius:var(--radius-lg); padding:26px;
+  transition:border-color 0.3s, transform 0.3s var(--ease);
+}
+.tactic-card:hover{ transform:translateY(-3px); border-color:rgba(63,185,80,0.3); }
+.tactic-num{ font-family:var(--font-mono); font-size:13px; color:var(--green); font-weight:700; margin-bottom:12px; }
+.tactic-card h4{ font-size:17px; font-weight:700; margin-bottom:10px; }
+.tactic-card p{ font-size:14px; color:var(--text-secondary); line-height:1.7; }
+.tactic-card code{
+  font-family:var(--font-mono); font-size:12.5px;
+  background:var(--bg-canvas); border:1px solid var(--hairline-soft);
+  padding:2px 6px; border-radius:4px; color:#e3b341;
+}
+.tactic-card pre{
+  font-family:var(--font-mono); font-size:12.5px; line-height:1.7;
+  background:var(--bg-canvas); border:1px solid var(--hairline-soft);
+  border-radius:8px; padding:14px; margin-top:12px; overflow-x:auto; color:var(--text-secondary);
+}
+.tactic-card pre .c1{ color:var(--green); }
+.tactic-card pre .c2{ color:var(--violet); }
+.tactic-card pre .c3{ color:var(--text-tertiary); }
+
+/* ============================================================
+   RISK CHECK
+   ============================================================ */
+.risk-section{ background:var(--bg-surface); border-top:1px solid var(--hairline-soft); border-bottom:1px solid var(--hairline-soft); }
+.risk-banner{
+  display:flex; gap:18px; align-items:flex-start;
+  background:linear-gradient(135deg, rgba(248,81,73,0.08), rgba(210,153,34,0.05));
+  border:1px solid rgba(248,81,73,0.3);
+  border-radius:var(--radius-lg);
+  padding:26px 28px;
+  margin-bottom:40px;
+}
+.risk-banner .ic{ font-size:28px; flex-shrink:0; line-height:1; }
+.risk-banner h3{ font-size:18px; font-weight:700; margin-bottom:8px; color:#ffb4ac; }
+.risk-banner p{ font-size:14.5px; color:var(--text-secondary); line-height:1.7; }
+.risk-banner code{ font-family:var(--font-mono); background:rgba(0,0,0,0.3); padding:2px 6px; border-radius:4px; }
+
+.risk-compare{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+@media (max-width:860px){ .risk-compare{ grid-template-columns:1fr; } }
+.risk-col{ border-radius:var(--radius-lg); padding:24px; border:1px solid var(--hairline); }
+.risk-col.bad{ background:rgba(248,81,73,0.05); border-color:rgba(248,81,73,0.25); }
+.risk-col.good{ background:rgba(63,185,80,0.05); border-color:rgba(63,185,80,0.25); }
+.risk-col h4{ font-size:15px; font-weight:700; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+.risk-col ul{ list-style:none; display:flex; flex-direction:column; gap:10px; }
+.risk-col li{ font-size:14px; color:var(--text-secondary); line-height:1.6; padding-left:22px; position:relative; }
+.risk-col.bad li::before{ content:'✕'; position:absolute; left:0; color:var(--red); font-weight:700; }
+.risk-col.good li::before{ content:'✓'; position:absolute; left:0; color:var(--green); font-weight:700; }
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-list{ display:flex; flex-direction:column; gap:10px; max-width:760px; }
+.faq-item{
+  border:1px solid var(--hairline); border-radius:var(--radius-md);
+  background:var(--bg-surface);
+  overflow:hidden;
+}
+.faq-q{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 22px; cursor:pointer;
+  font-weight:600; font-size:15px;
+}
+.faq-q .plus{
+  font-family:var(--font-mono); color:var(--text-tertiary); font-size:18px;
+  transition:transform 0.3s var(--ease);
+  flex-shrink:0; margin-left:16px;
+}
+.faq-item.open .faq-q .plus{ transform:rotate(45deg); color:var(--green); }
+.faq-a{
+  max-height:0; overflow:hidden;
+  transition:max-height 0.35s var(--ease);
+  padding:0 22px;
+}
+.faq-a-inner{ padding-bottom:20px; font-size:14.5px; color:var(--text-secondary); line-height:1.75; }
+.faq-item.open .faq-a{ max-height:400px; }
+
+/* ============================================================
+   FOOTER / CTA
+   ============================================================ */
+.final-cta{
+  text-align:center; padding:140px 0 100px;
+  position:relative;
+}
+.final-cta h2{ font-size:clamp(30px,4vw,48px); font-weight:800; letter-spacing:-0.02em; margin-bottom:18px; }
+.final-cta p{ color:var(--text-secondary); font-size:16.5px; margin-bottom:36px; max-width:520px; margin-inline:auto; }
+.final-cta .hero-actions{ justify-content:center; margin-bottom:0; }
+
+footer{
+  border-top:1px solid var(--hairline-soft);
+  padding:48px 0;
+}
+.footer-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
+.footer-inner .mono{ font-size:13px; color:var(--text-tertiary); }
+.footer-links{ display:flex; gap:24px; font-size:13.5px; color:var(--text-secondary); }
+.footer-links a:hover{ color:var(--text-primary); }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NOISE / GRAIN OVERLAY (ambient texture, very low opacity)
+     ============================================================ -->
+<svg style="position:fixed;inset:0;width:0;height:0;pointer-events:none;">
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="noise"/><feColorMatrix in="noise" type="saturate" values="0"/></filter>
+</svg>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <span class="dot"></span>
+      <span>achievements<span style="color:var(--text-tertiary)">.</span>guide</span>
+    </div>
+    <div class="nav-links">
+      <a href="#achievements" data-link>Achievements</a>
+      <a href="#tiers" data-link>Tiers</a>
+      <a href="#strategy" data-link>Fast Track</a>
+      <a href="#hacks" data-link>Pro Tactics</a>
+      <a href="#risk" data-link>Risk Check</a>
+      <a href="#faq" data-link>FAQ</a>
+    </div>
+    <a class="nav-cta" href="https://github.com/settings/profile" target="_blank" rel="noopener">
+      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8 8 0 0 1-5.45 7.59c-.4.1-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.48-.55.38A8 8 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+      Disable / manage
+    </a>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="container hero-inner">
+    <div>
+      <div class="hero-eyebrow"><span class="blink mono">●</span> UPDATED FOR 2026 · 11 ACHIEVEMENTS TRACKED, TIER-BY-TIER</div>
+      <h1>Unlock every<br><span class="accent">GitHub achievement</span><br>the right way.</h1>
+      <p class="hero-sub">A laser-focused, no-fluff field guide to every badge on your GitHub profile — <strong>real unlock criteria</strong>, exact tier thresholds, the fastest legitimate paths, and the tactics that actually work in 2026 without putting your account at risk.</p>
+      <div class="hero-actions">
+        <a href="#achievements" class="btn btn-primary">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16Zm3.78-9.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 1.06-1.06L6.75 9.19l3.97-3.97a.75.75 0 0 1 1.06 1.06Z"/></svg>
+          See all achievements
+        </a>
+        <a href="#strategy" class="btn btn-ghost">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM6.379 5.227A.75.75 0 0 1 7.5 4.94l3.75 2.5a.75.75 0 0 1 0 1.247l-3.75 2.5a.75.75 0 0 1-1.121-.747V5.86a.75.75 0 0 1 0-.633Z" fill-rule="evenodd"/></svg>
+          Fast-track plan
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num" id="statBadges">0</div>
+          <div class="hero-stat-label">earnable badges</div>
+        </div>
+        <div>
+          <div class="hero-stat-num" id="statTiers">0</div>
+          <div class="hero-stat-label">tiered achievements</div>
+        </div>
+        <div>
+          <div class="hero-stat-num"><span id="statDays">0</span>d</div>
+          <div class="hero-stat-label">to 100% (focused)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="graph-card">
+      <div class="graph-card-header">
+        <div class="traffic"><span></span><span></span><span></span></div>
+        <span class="graph-card-title">git log --graph --oneline --achievements</span>
+      </div>
+      <svg class="graph-svg" id="commitGraph" viewBox="0 0 460 380" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+  </div>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<main>
+<section id="achievements">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">// 01 — The full roster</span>
+      <h2>Every achievement, decoded.</h2>
+      <p>GitHub keeps the exact unlock logic private — these criteria are reverse-engineered and community-verified across thousands of profiles, cross-checked against GitHub's own changelogs. Click any card for the full breakdown.</p>
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-chip active" data-filter="all">All achievements</button>
+      <button class="filter-chip" data-filter="easy">Easy</button>
+      <button class="filter-chip" data-filter="medium">Medium</button>
+      <button class="filter-chip" data-filter="rare">Rare / Slow</button>
+      <button class="filter-chip" data-filter="unobtainable">Unobtainable</button>
+    </div>
+
+    <div class="badge-grid" id="badgeGrid"></div>
+  </div>
+</section>
+
+<section id="tiers" class="tier-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">// 02 — Climbing the ladder</span>
+      <h2>Five achievements go Bronze → Silver → Gold.</h2>
+      <p>Most badges are one-and-done. These five scale with you — the icon literally changes shape as you climb. Here's the exact threshold for every tier, base through gold.</p>
+    </div>
+
+    <div class="tier-head-row">
+      <span>Achievement</span><span>Progress to Gold</span><span>Base</span><span>Silver</span><span>Gold</span>
+    </div>
+    <div class="tier-table" id="tierTable"></div>
+  </div>
+</section>
+
+<section id="strategy">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">// 03 — The fast-track plan</span>
+      <h2>Zero to fully unlocked in two focused weekends.</h2>
+      <p>Order matters. Do these in sequence and most of the roster falls out as a side effect of normal, honest open-source work — no wasted motion.</p>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<section id="hacks">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">// 04 — Pro tactics</span>
+      <h2>The moves that actually save you time.</h2>
+      <p>Every tactic below is 100% within GitHub's Terms of Service. We skip anything that risks a ban — see <a href="#risk" style="color:var(--violet); text-decoration:underline;">Risk Check</a> for why that matters more than the badge itself.</p>
+    </div>
+    <div class="tactics-grid" id="tacticsGrid"></div>
+  </div>
+</section>
+
+<section id="risk" class="risk-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">// 05 — Read this before you "hack" anything</span>
+      <h2>The sock-puppet account trick isn't a hack. It's a self-report.</h2>
+      <p>You'll see guides telling you to spin up a second account to co-author commits with yourself for <strong style="color:var(--text-primary)">Pair Extraordinaire</strong>. Here's why that's the worst trade in this whole guide.</p>
+    </div>
+
+    <div class="risk-banner">
+      <div class="ic">⚠️</div>
+      <div>
+        <h3>GitHub's Terms of Service cap you at one free personal account.</h3>
+        <p>Section 3 of the GitHub Terms of Service states that <code>one person or legal entity may maintain no more than one free Account</code>. Creating a second account purely to co-author commits with yourself is exactly the "manipulate platform features" pattern GitHub's trust & safety team looks for — and enforcement has gotten sharper, not softer, every year. The badge is cosmetic. The suspension risk is to your real account, your real contribution history, and any orgs you belong to.</p>
+      </div>
+    </div>
+
+    <div class="risk-compare">
+      <div class="risk-col bad">
+        <h4 style="color:#ffb4ac">✕ The sock-puppet method</h4>
+        <ul>
+          <li>Violates GitHub ToS §3 (one free account per person)</li>
+          <li>Trivially detectable: shared IP, device fingerprint, timing patterns, identical commit cadence</li>
+          <li>Risk is asymmetric — you risk your <em>real</em> account to dress up a fake one</li>
+          <li>Org admins and security teams flag linked-account patterns automatically</li>
+          <li>Saves you maybe 10 minutes versus the legitimate path below</li>
+        </ul>
+      </div>
+      <div class="risk-col good">
+        <h4 style="color:#a8e6b3">✓ The legitimate method</h4>
+        <ul>
+          <li>Fully ToS-compliant — uses Git's real co-authoring feature as designed</li>
+          <li>Pair with literally anyone: a friend, a study-group peer, a Discord server buddy, a coworker</li>
+          <li>Builds an actual collaboration habit and commit etiquette that helps your career</li>
+          <li>Works for the entire <code>Pair Extraordinaire</code> tier ladder (10 → 24 → 48 PRs), not just the base badge</li>
+          <li>Zero account risk, same badge, same shelf life on your profile</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">// 06 — FAQ</span>
+      <h2>Quick answers.</h2>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Your profile's <span style="color:var(--green)">achievements</span> tab<br>is one weekend away.</h2>
+    <p>Bookmark this, work through the fast-track plan, and check items off as your real contribution graph fills in.</p>
+    <div class="hero-actions">
+      <a href="#achievements" class="btn btn-primary">
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16Zm3.78-9.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 1.06-1.06L6.75 9.19l3.97-3.97a.75.75 0 0 1 1.06 1.06Z"/></svg>
+        Start unlocking
+      </a>
+      <a href="https://github.com/settings/profile#achievements-and-highlights" target="_blank" rel="noopener" class="btn btn-ghost">Open your achievements tab ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span class="mono">© 2026 · MIT Licensed · built for the GitHub community</span>
+    <div class="footer-links">
+      <a href="#achievements">Achievements</a>
+      <a href="#risk">Risk check</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/managing-contribution-settings-on-your-profile/showing-your-private-contributions-and-achievements-on-your-profile" target="_blank" rel="noopener">Official GitHub docs ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   DATA LAYER — verified against community-maintained trackers
+   and GitHub's own changelog/announcements as of June 2026.
+   ============================================================ */
+
+const ACHIEVEMENTS = [
+  {
+    id:'pull-shark', name:'Pull Shark', icon:'🦈', status:'easy',
+    tagline:'Get a pull request merged. That\'s it.',
+    criteria:'merged_PRs >= 2',
+    time:'1–2 days', tiers:[2,16,128,1024],
+    detail:`Unlocks the moment you have <strong>2 merged pull requests</strong> across any public or private repo — including your own. Tiers climb to 16, 128, and a genuinely tough 1024 for gold.
+    <div class="tip">💡 Fastest path: open a PR on your own repo (a typo fix, a README tweak) and merge it. Two of those and you're unlocked.</div>`
+  },
+  {
+    id:'pair-extraordinaire', name:'Pair Extraordinaire', icon:'🧑‍🤝‍🧑', status:'easy',
+    tagline:'Co-author a merged commit with another real person.',
+    criteria:'co-authored_PR_merged >= 1',
+    time:'Same day', tiers:[1,10,24,48],
+    detail:`Unlocked by getting a pull request merged where the commit includes a <code>Co-authored-by:</code> trailer. Tiers scale to 10, 24, and 48 co-authored merged PRs for gold.
+    <div class="tip">💡 Pair with a real friend or community member. In your editor or terminal, append this to any commit:</div>
+    <pre class="mono"><span class="c3"># at the end of your commit message</span>
+<span class="c1">Co-authored-by:</span> <span class="c2">Name &lt;email@example.com&gt;</span></pre>
+    <div class="warn">⚠️ A second account you control is <strong>not</strong> "another person." See the Risk Check section — it violates GitHub's one-account ToS and is trivially detectable.</div>`
+  },
+  {
+    id:'quickdraw', name:'Quickdraw', icon:'⚡', status:'easy',
+    tagline:'Close an issue or PR within 5 minutes of opening it.',
+    criteria:'time_to_close <= 5min',
+    time:'5 minutes', tiers:null,
+    detail:`Open an issue or pull request and close it (or merge it) within <strong>5 minutes</strong> of creation. No tiers — single unlock.
+    <div class="tip">💡 Open a throwaway issue on your own repo titled "test" and close it immediately. Honest, harmless, instant.</div>`
+  },
+  {
+    id:'yolo', name:'YOLO', icon:'🎲', status:'easy',
+    tagline:'Merge your own pull request without a review.',
+    criteria:'self_merge_no_review == true',
+    time:'5 minutes', tiers:null,
+    detail:`Merge a pull request on a repo you own <strong>without requesting or receiving a code review</strong>. Branch protection rules that force reviews will block this — make sure your repo allows direct merges.
+    <div class="tip">💡 On a personal repo: open a branch, open a PR, hit merge yourself. No reviewers requested.</div>`
+  },
+  {
+    id:'galaxy-brain', name:'Galaxy Brain', icon:'🧠', status:'medium',
+    tagline:'Get an answer accepted in GitHub Discussions.',
+    criteria:'accepted_answers >= 2',
+    time:'1–3 weeks', tiers:[2,8,16,32],
+    detail:`Get <strong>2 of your answers marked as the accepted answer</strong> in a repository's Discussions Q&A category. Tiers scale to 8, 16, and 32 accepted answers.
+    <div class="warn">⚠️ As of Feb 2024, this no longer unlocks via GitHub's own Community Discussions forum (anti-spam measure) — it still works in individual repos that have Discussions enabled with a Q&A-format category.</div>
+    <div class="tip">💡 Find active repos with Discussions on (check the "Discussions" tab), answer genuine questions you actually know, and ask the asker to mark it accepted.</div>`
+  },
+  {
+    id:'starstruck', name:'Starstruck', icon:'🌟', status:'rare',
+    tagline:'A repo you created hits 16 stars.',
+    criteria:'repo_stars >= 16 (creator only)',
+    time:'Weeks–months', tiers:[16,128,512,4096],
+    detail:`Unlocks when a repository <strong>you created</strong> reaches 16 stargazers. This only counts repos where you're the original creator, not forks. Tiers climb steeply: 128, 512, then 4096 for gold.
+    <div class="tip">💡 This is the one badge that rewards genuinely useful, well-marketed projects — see the Pro Tactics section for how to actually earn stars instead of farming them.</div>`
+  },
+  {
+    id:'public-sponsor', name:'Public Sponsor', icon:'💖', status:'easy',
+    tagline:'Sponsor any open-source developer via GitHub Sponsors.',
+    criteria:'sponsorship_active >= 1',
+    time:'5 minutes', tiers:null,
+    detail:`Go to a maintainer's profile, click <strong>Sponsor</strong>, and complete a sponsorship of any amount through GitHub Sponsors. Requires a payment method on file.
+    <div class="tip">💡 Sponsor a small, real project you actually use — many tiers start at $1–5/month. It directly funds open source too.</div>`
+  },
+  {
+    id:'arctic-vault', name:'Arctic Code Vault Contributor', icon:'🧊', status:'unobtainable',
+    tagline:'Snapshot frozen 2020 — no longer earnable.',
+    criteria:'contributed_to_2020_archive_snapshot',
+    time:'Not earnable', tiers:null,
+    detail:`Awarded to everyone who had contributed code to qualifying public repos at the moment of GitHub's <strong>February 2, 2020</strong> Arctic Code Vault snapshot — stored on film in an Arctic World Archive vault in Svalbard, Norway. The snapshot is permanently closed; there is no current way to earn this.`
+  },
+  {
+    id:'mars-2020', name:'Mars 2020 Contributor', icon:'🚀', status:'unobtainable',
+    tagline:'Code that flew on the Ingenuity Mars helicopter.',
+    criteria:'contributed_to_qualifying_mars_repos',
+    time:'Not earnable', tiers:null,
+    detail:`Given to contributors of the open-source projects (F Prime, Linux, Python and others) whose code ran on NASA's <strong>Ingenuity</strong> helicopter during the Mars 2020 mission. The qualifying contribution window has long closed.`
+  },
+  {
+    id:'heart-sleeve', name:'Heart On Your Sleeve', icon:'❤️', status:'unobtainable',
+    tagline:'React with ❤️ — currently disabled platform-wide.',
+    criteria:'heart_reactions_given >= 1 (disabled)',
+    time:'Not currently earnable', tiers:[1,16,128,'??'],
+    detail:`Originally awarded for reacting to content with a ❤️ emoji. GitHub has listed this as <strong>"being tested"</strong> for years without re-enabling it broadly — treat it as dormant rather than retired. Tiers (if reactivated) scale to 16, 128, and an undisclosed gold threshold.`
+  },
+  {
+    id:'open-sourcerer', name:'Open Sourcerer', icon:'🧙', status:'unobtainable',
+    tagline:'PRs merged across multiple public repos — currently disabled.',
+    criteria:'distinct_public_repos_with_merged_PRs >= 1 (disabled)',
+    time:'Not currently earnable', tiers:[1,8,16,64],
+    detail:`Intended for contributors with merged pull requests across <strong>multiple distinct public repositories</strong>. Like Heart On Your Sleeve, it's flagged "being tested" and not actively awarded as of June 2026. Tiers would scale to 8, 16, and 64 repos.`
+  },
+];
+
+const FAQS = [
+  { q:'Do achievements affect my GitHub ranking, hiring chances, or profile algorithm?', a:'No. Achievements are purely cosmetic badges on your profile page. They carry zero algorithmic weight in search, trending, or any recommendation system GitHub runs. Recruiters skim them as a vibe check at best — your actual repos and contribution graph matter far more.' },
+  { q:'Can I hide my achievements if I don\'t want them visible?', a:'Yes. Go to github.com/settings/profile, scroll to the Achievements section, and toggle visibility off. This hides them from your public profile without deleting your unlock history — re-enable any time.' },
+  { q:'Why don\'t I see a badge I just unlocked immediately?', a:'GitHub\'s achievement calculation runs on a delayed batch job, not in real time. It can take anywhere from a few minutes to about 24 hours for a freshly met criterion to render on your profile. If it\'s been longer, double-check the action actually met the exact criteria above.' },
+  { q:'Do private repository contributions count toward achievements?', a:'Yes for most badges — Pull Shark, Pair Extraordinaire, Quickdraw, and YOLO all count activity in private repos you have access to. Starstruck and Galaxy Brain require public visibility since stars and discussions are inherently public surfaces.' },
+  { q:'Is buying GitHub stars or using bot networks to hit Starstruck against the rules?', a:'Yes, unambiguously. Artificial star inflation violates GitHub\'s Acceptable Use Policies and can get a repository delisted from trending/search or the account suspended. It also doesn\'t build anything — a starred repo with no real users is a dead end. Earn stars by shipping something people actually want, see Pro Tactics.' },
+  { q:'Will GitHub add achievements I can\'t earn yet?', a:'Likely. The "Internal" Proxima badges are reserved for GitHub staff, and the platform has quietly retired (Heart On Your Sleeve, Open Sourcerer) and renamed badges before (the original "GitHub Sponsor" became "Public Sponsor" in 2022). Expect this list to keep evolving — this guide is maintained to track it.' },
+];
+
+const TACTICS = [
+  { num:'01', title:'Batch your co-authored commits with a real collaborator', body:'Find one other person — a friend, classmate, or someone from a Discord/Slack dev community — and agree to co-author a handful of small, real PRs together over a weekend (docs fixes, small features, refactors). One session gets you past base tier; a few sessions over weeks gets you to Silver and Gold legitimately.' },
+  { num:'02', title:'Use a "playground" repo for the instant badges', body:'Create one throwaway public repo specifically for safely earning Quickdraw and YOLO without touching real projects: open an issue, close it in under five minutes (Quickdraw); open a branch, PR it, self-merge without review (YOLO). Honest, fast, zero side effects on real work.' },
+  { num:'03', title:'Answer in Discussions where you have actual expertise', body:'Galaxy Brain rewards real signal. Search github.com/search with type:Discussions plus your stack (e.g. "react" "discussions:>0") to find active Q&A categories, then answer questions you\'d genuinely know the answer to at work. This also builds reputation that outlasts the badge.' },
+  { num:'04', title:'Ship something narrow and genuinely useful for Starstruck', body:'A focused CLI tool, a sharp VS Code snippet pack, or a guide like this one earns stars because people bookmark and share it — not because of badge-farming. Write a real README (problem → solution → quick demo), post it once in a relevant community, and let organic sharing do the rest.' },
+  { num:'05', title:'Set up commit co-authorship as a permanent git alias', body:'If you pair-program often, save the trailer as a snippet so it\'s effortless to add correctly every time — capitalization and spacing in the trailer matter for GitHub to parse it.', code:`<span class="c3"># add to ~/.gitmessage or your editor snippets</span>
+<span class="c1">git commit -m</span> <span class="c2">"fix: typo"</span> -m <span class="c2">"Co-authored-by: Jane Doe &lt;jane@example.com&gt;"</span>` },
+  { num:'06', title:'Sponsor with intent, not just for the badge', body:'Public Sponsor takes five minutes and any amount qualifies — but pick a maintainer whose project you actually rely on. $2/month on a tool in your daily stack is a better five minutes spent than a random sponsorship, and it compounds into real ecosystem goodwill.' },
+];
+
+const TIMELINE = [
+  { day:'Day 1 — Morning', title:'Set up your playground repo', body:'Create one new public repo. This becomes your safe testing ground for the instant, zero-risk achievements.', badges:['YOLO','Quickdraw'] },
+  { day:'Day 1 — Afternoon', title:'Recruit a pairing partner', body:'Message one real person — friend, coworker, community member — and co-author 2–3 small, genuine commits together this weekend.', badges:['Pair Extraordinaire'] },
+  { day:'Day 1 — Evening', title:'Open and merge two small PRs', body:'On any repo you control, open a tiny improvement as a PR (typo, doc update, small refactor) and merge it. Repeat once more.', badges:['Pull Shark'] },
+  { day:'Day 2', title:'Sponsor a project you actually use', body:'Five minutes, any amount, instant unlock — and it genuinely supports someone\'s open-source work.', badges:['Public Sponsor'] },
+  { day:'Week 2', title:'Answer real Discussions questions', body:'Spend 30 minutes a few times this week answering questions in repos with Q&A-enabled Discussions where you actually know the subject.', badges:['Galaxy Brain'] },
+  { day:'Ongoing', title:'Build toward Starstruck honestly', body:'Pick one useful idea, polish the README, ship it, share it once. Stars compound slowly — this is the only badge worth a long game.', badges:['Starstruck (16★)'] },
+];
+
+/* ============================================================
+   RENDER — Badge grid
+   ============================================================ */
+const grid = document.getElementById('badgeGrid');
+
+function renderBadges(filter='all'){
+  grid.innerHTML = '';
+  const list = filter==='all' ? ACHIEVEMENTS : ACHIEVEMENTS.filter(a=>a.status===filter);
+  list.forEach((a,i)=>{
+    const card = document.createElement('div');
+    card.className = 'badge-card';
+    card.dataset.status = a.status;
+    card.style.animationDelay = (i*0.04)+'s';
+
+    const statusLabel = {easy:'Easy',medium:'Medium',rare:'Rare / Slow',unobtainable:'Unobtainable'}[a.status];
+
+    let tiersHTML = '';
+    if(a.tiers){
+      tiersHTML = `<div class="badge-tiers">
+        <div class="tier-pip b"></div><div class="tier-pip s"></div><div class="tier-pip g"></div>
+      </div>
+      <div style="font-family:var(--font-mono); font-size:11px; color:var(--text-tertiary);">Tiers: ${a.tiers.join(' → ')}</div>`;
+    }
+
+    card.innerHTML = `
+      <div class="badge-top">
+        <div class="badge-icon-wrap">${a.icon}</div>
+        <div class="badge-difficulty">${statusLabel}</div>
+      </div>
+      <div class="badge-name">${a.name}</div>
+      <div class="badge-tagline">${a.tagline}</div>
+      <div class="badge-criteria"><span class="k">if</span> (${a.criteria}) <span class="k">unlock</span>();</div>
+      ${tiersHTML}
+      <div class="badge-footer">
+        <div class="badge-time">⏱ ${a.time}</div>
+        <div class="badge-expand">Details +</div>
+      </div>
+      <div class="badge-detail">${a.detail}</div>
+    `;
+
+    card.addEventListener('click', (e)=>{
+      const detail = card.querySelector('.badge-detail');
+      const expand = card.querySelector('.badge-expand');
+      const isOpen = detail.classList.toggle('open');
+      expand.textContent = isOpen ? 'Details −' : 'Details +';
+    });
+
+    card.addEventListener('mousemove', (e)=>{
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', ((e.clientX-r.left)/r.width*100)+'%');
+      card.style.setProperty('--my', ((e.clientY-r.top)/r.height*100)+'%');
+    });
+
+    grid.appendChild(card);
+  });
+}
+renderBadges();
+
+document.getElementById('filterBar').addEventListener('click', (e)=>{
+  const chip = e.target.closest('.filter-chip');
+  if(!chip) return;
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  chip.classList.add('active');
+  renderBadges(chip.dataset.filter);
+});
+
+/* ============================================================
+   RENDER — Tier table
+   ============================================================ */
+const TIERED = ACHIEVEMENTS.filter(a=>a.tiers && a.tiers.length===4 && a.status!=='unobtainable');
+const tierTable = document.getElementById('tierTable');
+TIERED.forEach(a=>{
+  const row = document.createElement('div');
+  row.className = 'tier-row';
+  row.innerHTML = `
+    <div class="tier-row-name"><span class="ic">${a.icon}</span>${a.name}</div>
+    <div class="tier-bars">
+      <div class="tier-bar-seg base">${a.tiers[0]}</div>
+      <div class="tier-bar-seg bronze">${a.tiers[1]}</div>
+      <div class="tier-bar-seg silver">${a.tiers[2]}</div>
+      <div class="tier-bar-seg gold">${a.tiers[3]}</div>
+    </div>
+    <div class="tier-col">${a.tiers[0]}</div>
+    <div class="tier-col">${a.tiers[2]}</div>
+    <div class="tier-col">${a.tiers[3]}</div>
+  `;
+  tierTable.appendChild(row);
+});
+
+/* ============================================================
+   RENDER — Timeline
+   ============================================================ */
+const timelineEl = document.getElementById('timeline');
+TIMELINE.forEach(step=>{
+  const div = document.createElement('div');
+  div.className = 't-step';
+  div.innerHTML = `
+    <div class="t-step-day">${step.day}</div>
+    <h4>${step.title}</h4>
+    <p>${step.body}</p>
+    <div class="t-step-badges">${step.badges.map(b=>`<span class="t-pill">${b}</span>`).join('')}</div>
+  `;
+  timelineEl.appendChild(div);
+});
+
+/* ============================================================
+   RENDER — Tactics
+   ============================================================ */
+const tacticsGrid = document.getElementById('tacticsGrid');
+TACTICS.forEach(t=>{
+  const div = document.createElement('div');
+  div.className = 'tactic-card';
+  div.innerHTML = `
+    <div class="tactic-num">TACTIC ${t.num}</div>
+    <h4>${t.title}</h4>
+    <p>${t.body}</p>
+    ${t.code ? `<pre>${t.code}</pre>` : ''}
+  `;
+  tacticsGrid.appendChild(div);
+});
+
+/* ============================================================
+   RENDER — FAQ accordion
+   ============================================================ */
+const faqList = document.getElementById('faqList');
+FAQS.forEach(f=>{
+  const item = document.createElement('div');
+  item.className = 'faq-item';
+  item.innerHTML = `
+    <div class="faq-q">${f.q}<span class="plus">+</span></div>
+    <div class="faq-a"><div class="faq-a-inner">${f.a}</div></div>
+  `;
+  item.querySelector('.faq-q').addEventListener('click', ()=>{
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  });
+  faqList.appendChild(item);
+});
+
+/* ============================================================
+   RENDER — Ticker
+   ============================================================ */
+const tickerItems = ACHIEVEMENTS.map(a=>`<span><b>${a.icon} ${a.name}</b> — ${a.tagline}</span>`).join('');
+document.getElementById('tickerTrack').innerHTML = tickerItems + tickerItems;
+
+/* ============================================================
+   HERO STAT COUNTERS
+   ============================================================ */
+function countUp(el, target, duration=1400, suffix=''){
+  const start = performance.now();
+  function tick(now){
+    const p = Math.min((now-start)/duration, 1);
+    const eased = 1 - Math.pow(1-p, 3);
+    el.textContent = Math.round(eased*target) + suffix;
+    if(p<1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const earnableCount = ACHIEVEMENTS.filter(a=>a.status!=='unobtainable').length;
+const tieredCount = ACHIEVEMENTS.filter(a=>a.tiers && a.tiers.length===4).length;
+countUp(document.getElementById('statBadges'), earnableCount);
+countUp(document.getElementById('statTiers'), tieredCount);
+countUp(document.getElementById('statDays'), 14);
+
+/* ============================================================
+   SIGNATURE ELEMENT — animated git commit / merge graph
+   Branches merge into main, each merge node "pops" and lights
+   up green, echoing the achievement-unlock moment.
+   ============================================================ */
+(function buildCommitGraph(){
+  const svg = document.getElementById('commitGraph');
+  const NS = 'http://www.w3.org/2000/svg';
+  const W = 460, H = 380;
+  const mainX = 90;
+  const branchX = 230;
+  const tagX = 360;
+
+  const nodes = [
+    {x:mainX, y:40, type:'main'},
+    {x:mainX, y:100, type:'main'},
+    {x:branchX, y:130, type:'branch'},
+    {x:mainX, y:160, type:'merge', label:'Pull Shark'},
+    {x:branchX, y:190, type:'branch'},
+    {x:mainX, y:220, type:'merge', label:'Pair Extraordinaire'},
+    {x:mainX, y:280, type:'main'},
+    {x:branchX, y:250, type:'branch'},
+    {x:mainX, y:310, type:'merge', label:'Quickdraw'},
+    {x:mainX, y:350, type:'main'},
+  ];
+
+  function el(tag, attrs){
+    const e = document.createElementNS(NS, tag);
+    for(const k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  // main spine line
+  svg.appendChild(el('line', {x1:mainX,y1:30,x2:mainX,y2:360, stroke:'#2a3038', 'stroke-width':2}));
+
+  // branch curves (decorative, behind)
+  const branchPaths = [
+    `M ${mainX} 100 C ${mainX} 118, ${branchX} 112, ${branchX} 130 L ${branchX} 130 C ${branchX} 148, ${mainX} 142, ${mainX} 160`,
+    `M ${mainX} 160 C ${mainX} 178, ${branchX} 172, ${branchX} 190 C ${branchX} 208, ${mainX} 202, ${mainX} 220`,
+    `M ${mainX} 220 C ${mainX} 235, ${branchX} 232, ${branchX} 250 C ${branchX} 290, ${mainX} 295, ${mainX} 310`,
+  ];
+  branchPaths.forEach((d,i)=>{
+    const p = el('path', {d, fill:'none', stroke:'#a371f7', 'stroke-width':2, opacity:'0'});
+    p.style.transition = 'opacity 0.6s ease';
+    p.style.transitionDelay = (0.3 + i*0.5)+'s';
+    svg.appendChild(p);
+    requestAnimationFrame(()=> setTimeout(()=> p.setAttribute('opacity','0.55'), 50));
+  });
+
+  // nodes
+  nodes.forEach((n,i)=>{
+    const isMerge = n.type==='merge';
+    const r = isMerge ? 7 : 5;
+    const fill = isMerge ? '#3fb950' : (n.type==='branch' ? '#a371f7' : '#5f6772');
+
+    const c = el('circle', {cx:n.x, cy:n.y, r:0, fill});
+    c.style.transition = 'r 0.5s cubic-bezier(0.16,1,0.3,1)';
+    c.style.transitionDelay = (i*0.16)+'s';
+    svg.appendChild(c);
+    setTimeout(()=> c.setAttribute('r', r), 50);
+
+    if(isMerge){
+      const ring = el('circle', {cx:n.x, cy:n.y, r:r, fill:'none', stroke:'#3fb950', 'stroke-width':2, opacity:'0.8'});
+      ring.style.transformOrigin = `${n.x}px ${n.y}px`;
+      svg.appendChild(ring);
+      let scale = 1, opacity = 0.8;
+      setTimeout(function pulse(){
+        ring.animate([
+          {transform:'scale(1)', opacity:0.8},
+          {transform:'scale(2.6)', opacity:0}
+        ], {duration:1400, easing:'ease-out', delay:i*160, fill:'forwards'});
+      }, 50);
+
+      const label = el('text', {
+        x:n.x+18, y:n.y+4, fill:'#8b949e', 'font-family':'JetBrains Mono, monospace',
+        'font-size':'11', opacity:'0'
+      });
+      label.textContent = n.label;
+      label.style.transition = 'opacity 0.5s ease';
+      label.style.transitionDelay = (i*0.16+0.3)+'s';
+      svg.appendChild(label);
+      setTimeout(()=> label.setAttribute('opacity','1'), 50);
+    }
+  });
+
+  // commit hash text near main nodes for flavor
+  const hashes = ['a1f9c2e','7be0341','f4d8a90'];
+  [0,1,6].forEach((idx,i)=>{
+    const n = nodes[idx];
+    const t = el('text', {
+      x:n.x-18, y:n.y+4, fill:'#5f6772', 'font-family':'JetBrains Mono, monospace',
+      'font-size':'10', 'text-anchor':'end', opacity:'0.7'
+    });
+    t.textContent = hashes[i];
+    svg.appendChild(t);
+  });
+})();
+
+/* ============================================================
+   NAV — scroll progress bar + active link tracking
+   ============================================================ */
+const navProgress = document.getElementById('navProgress');
+const navEl = document.getElementById('nav');
+const sections = document.querySelectorAll('main section, header.hero');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+function onScroll(){
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight>0 ? (scrollTop/docHeight)*100 : 0;
+  navProgress.style.width = pct+'%';
+
+  navEl.style.borderBottomColor = scrollTop>40 ? 'var(--hairline)' : 'transparent';
+
+  let current = null;
+  sections.forEach(s=>{
+    const rect = s.getBoundingClientRect();
+    if(rect.top<=120 && rect.bottom>120) current = s.id;
+  });
+  navLinks.forEach(l=>{
+    l.classList.toggle('active', l.getAttribute('href')==='#'+current);
+  });
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+/* ============================================================
+   SCROLL REVEAL — IntersectionObserver fade/rise for sections
+   ============================================================ */
+const revealTargets = document.querySelectorAll('.badge-card, .tier-row, .t-step, .tactic-card, .faq-item');
+revealTargets.forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(18px)';
+  el.style.transition='opacity 0.6s var(--ease), transform 0.6s var(--ease)';
+});
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.opacity='1';
+      entry.target.style.transform='translateY(0)';
+      io.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+revealTargets.forEach(el=>io.observe(el));
+
+/* ============================================================
+   SMOOTH ANCHOR SCROLL (offset for fixed nav)
+   ============================================================ */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', (e)=>{
+    const id = a.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if(!target) return;
+    e.preventDefault();
+    const top = target.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({top, behavior:'smooth'});
+  });
+});
+</script>
+
+</body>
+</html>
