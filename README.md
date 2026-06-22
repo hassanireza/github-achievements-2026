@@ -139,16 +139,4 @@ MIT - see [LICENSE](LICENSE). Fork it, re-skin it, translate it, ship it as your
 
 ---
 
-<div align="center">
-
-### Found this useful?
-
-**⭐ Star this repo** - it's the single biggest thing that helps other developers find an accurate guide instead of a stale one.
-
-[![Star History Chart](https://api.star-history.com/svg?repos=hassanireza/github-achievements-2026&type=Date)](https://star-history.com/#hassanireza/github-achievements-2026&Date)
-
-</div>
-
----
-
 <sub>**Disclaimer:** This is an unofficial, community-maintained guide. It is not affiliated with, endorsed by, or sponsored by GitHub, Inc. Achievement criteria are reverse-engineered from public, observable behavior and are not guaranteed to be exact or permanent - GitHub can and does change these without notice.</sub>
