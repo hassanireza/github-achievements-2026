@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏆 GitHub Achievements 2026 — The Complete Unlock Guide
+# 🏆 GitHub Achievements 2026 | The Complete Unlock Guide
 
 ### The fastest, most accurate, most honest guide to every badge on your GitHub profile.
 
